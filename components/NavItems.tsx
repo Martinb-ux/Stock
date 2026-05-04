@@ -1,7 +1,8 @@
+'use client'
+
 import {NAV_ITEMS} from "@/lib/constants";
+import {usePathname} from "next/navigation";
 import Link from "next/link";
-import {getRegistryItems} from "shadcn";
-import {callbackify} from "node:util";
 
 const NavItems = () => {
     const pathname = usePathname()
@@ -19,7 +20,7 @@ const NavItems = () => {
                     <Link href={href} className={`hover:text-yellow-500 transition-colors ${
                         isActive(href) ? 'text-gray-100' : ''
                     }`}>
-
+                        {label}
                     </Link>
                 </li>
             ))}
