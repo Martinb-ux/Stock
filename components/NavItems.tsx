@@ -1,6 +1,29 @@
+import {NAV_ITEMS} from "@/lib/constants";
+import Link from "next/link";
+import {getRegistryItems} from "shadcn";
+import {callbackify} from "node:util";
+
 const NavItems = () => {
+    const pathname = usePathname()
+
+    const isActive = (path: string) => {
+        if (path == '/') return pathname == '/';
+
+        return pathname.startsWith(path);
+    }
+
     return (
-        <div>Navitems</div>
+        <ul className="flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium">
+            {NAV_ITEMS.map(({ href, label }) => (
+                <li key={href}>
+                    <Link href={href} className={`hover:text-yellow-500 transition-colors ${
+                        isActive(href) ? 'text-gray-100' : ''
+                    }`}>
+
+                    </Link>
+                </li>
+            ))}
+        </ul>
     )
 }
 export default NavItems
