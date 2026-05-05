@@ -19,10 +19,12 @@ const UserDropdown = () => {
         router.push("/sign-in");
     }
 
+    const user = { name: 'John', email: 'battumartindavid@gmail.com' };
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline">Open</Button>
+                <Button variant="ghost" className="flex items-center gap-3 text-gray-4 hover:text-yellow-500">Open</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuGroup>
