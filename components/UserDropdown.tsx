@@ -40,7 +40,7 @@ const UserDropdown = () => {
                 </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="text-gray-400">
-                <divc className="flex relative items-center gap-3 py-2">
+                <div className="flex relative items-center gap-3 py-2">
                     <Avatar className="cursor-pointer">
                         <AvatarImage src="https://github.com/shadcn.png" />
                         <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
@@ -53,7 +53,7 @@ const UserDropdown = () => {
                         </span>
                         <span className="text-sm text-gray-500">{user.email}</span>
                     </div>
-                </divc>
+                </div>
                 <DropdownMenuGroup>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuItem>Profile</DropdownMenuItem>
