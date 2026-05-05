@@ -26,7 +26,7 @@ const UserDropdown = () => {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-3 cursor-pointer">
-                    <Avatar>
+                    <Avatar className="cursor-pointer">
                         <AvatarImage src="https://github.com/shadcn.png" />
                         <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
                             {user.name[0]}
@@ -39,7 +39,21 @@ const UserDropdown = () => {
                     </div>
                 </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="text-gray-400">
+                <div className="flex relative items-center gap-3 py-2">
+                    <Avatar className="cursor-pointer">
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
+                            {user.name[0]}
+                        </AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col">
+                        <span className='text-base font-medium text-gray-400'>
+                           {user.name}
+                        </span>
+                        <span className="text-sm text-gray-500">{user.email}</span>
+                    </div>
+                </div>
                 <DropdownMenuGroup>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuItem>Profile</DropdownMenuItem>
